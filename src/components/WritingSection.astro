@@ -1,0 +1,26 @@
+---
+import type { SiteContent } from '../data/types';
+
+interface Props {
+  content: SiteContent;
+}
+
+const { content } = Astro.props;
+---
+
+<section id="writing">
+  <h2>{content.ui.sectionWriting}</h2>
+  {content.writing.length > 0 ? (
+    <ul class="writing-list">
+      {content.writing.map((w) => (
+        <li>
+          <a href={w.href} target="_blank" rel="noopener">{w.title}</a>
+          <span class="sep" aria-hidden="true">·</span>
+          <span class="year">{w.year}</span>
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <p class="stub-notice">{content.ui.stubNotice}</p>
+  )}
+</section>

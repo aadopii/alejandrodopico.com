@@ -1,0 +1,15 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import WorkSection from '../../components/WorkSection.astro';
+import WritingSection from '../../components/WritingSection.astro';
+import TalksSection from '../../components/TalksSection.astro';
+import { es } from '../../data/es';
+---
+
+<Layout content={es} path="/es/">
+  <PageHeader content={es} />
+  <WorkSection content={es} />
+  <WritingSection content={es} />
+  <TalksSection content={es} />
+</Layout>

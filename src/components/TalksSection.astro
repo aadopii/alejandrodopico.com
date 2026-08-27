@@ -1,0 +1,23 @@
+---
+import type { SiteContent } from '../data/types';
+import TalkCard from './TalkCard.astro';
+
+interface Props {
+  content: SiteContent;
+}
+
+const { content } = Astro.props;
+---
+
+<section id="talks">
+  <h2>{content.ui.sectionTalks}</h2>
+  {content.talks.length > 0 ? (
+    <div class="talks-grid">
+      {content.talks.map((t) => (
+        <TalkCard talk={t} />
+      ))}
+    </div>
+  ) : (
+    <p class="stub-notice">{content.ui.stubNotice}</p>
+  )}
+</section>

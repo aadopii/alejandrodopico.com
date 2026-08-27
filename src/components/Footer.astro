@@ -1,0 +1,14 @@
+---
+import type { SiteContent } from '../data/types';
+import ContactRow from './ContactRow.astro';
+
+interface Props {
+  content: SiteContent;
+}
+
+const { content } = Astro.props;
+---
+
+<footer>
+  <ContactRow content={content} />
+</footer>

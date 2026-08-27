@@ -1,0 +1,32 @@
+---
+import type { SiteContent } from '../data/types';
+
+interface Props {
+  content: SiteContent;
+}
+
+const { content } = Astro.props;
+
+function isExternal(href: string): boolean {
+  return /^https?:\/\//i.test(href);
+}
+
+function attrsFor(href: string, rel?: string[]) {
+  const relTokens = [...(isExternal(href) ? ['noopener'] : []), ...(rel ?? [])];
+  return {
+    ...(isExternal(href) ? { target: '_blank' } : {}),
+    ...(relTokens.length ? { rel: relTokens.join(' ') } : {}),
+  };
+}
+---
+
+<p class="contact-row">
+  {content.contact.map((c, i) => (
+    <>
+      {i > 0 && <span class="sep" aria-hidden="true">·</span>}
+      <a href={c.href} {...attrsFor(c.href, c.rel)}>
+        {c.label}
+      </a>
+    </>
+  ))}
+</p>

@@ -1,0 +1,31 @@
+---
+import { Image } from 'astro:assets';
+import type { TalkEntry } from '../data/types';
+import { talkImages } from '../data/talkImages';
+
+interface Props {
+  talk: TalkEntry;
+}
+
+const { talk } = Astro.props;
+const youtubeThumb = talk.type === 'youtube' ? `https://i.ytimg.com/vi/${talk.videoId}/hqdefault.jpg` : null;
+const localImage = talkImages[talk.id] ?? null;
+---
+
+<a class="talk-card" href={talk.href} target="_blank" rel="noopener">
+  <span class="talk-media">
+    {youtubeThumb ? (
+      <img src={youtubeThumb} alt="" loading="lazy" width="480" height="360" />
+    ) : localImage ? (
+      <Image src={localImage} alt="" loading="lazy" width={480} />
+    ) : (
+      <span class="talk-media-x">
+        <span class="talk-media-x-title">{talk.title}</span>
+      </span>
+    )}
+  </span>
+  <span class="talk-meta">
+    <span class="talk-title">{talk.title}</span>
+    <span class="talk-venue-year">{talk.venue} · {talk.year}</span>
+  </span>
+</a>

@@ -1,0 +1,20 @@
+---
+import type { SiteContent } from '../data/types';
+import ContactRow from './ContactRow.astro';
+
+interface Props {
+  content: SiteContent;
+}
+
+const { content } = Astro.props;
+---
+
+<header class="page-header" id="top">
+  <h1>{content.name}</h1>
+  <ContactRow content={content} />
+  {content.bio.length > 0 ? (
+    content.bio.map((p) => <p>{p}</p>)
+  ) : (
+    <p class="stub-notice">{content.ui.stubNotice}</p>
+  )}
+</header>

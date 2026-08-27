@@ -1,0 +1,41 @@
+---
+import { Picture } from 'astro:assets';
+import type { SiteContent } from '../data/types';
+import avatarSrc from '../assets/avatar.jpg';
+
+interface Props {
+  content: SiteContent;
+  path: string;
+  altHref: string;
+}
+
+const { content, path, altHref } = Astro.props;
+const isEs = content.lang === 'es';
+const homeHref = isEs ? '/es/#top' : '/#top';
+---
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href={homeHref} class="nav-avatar" aria-label={content.name}>
+      <Picture
+        src={avatarSrc}
+        formats={['webp']}
+        fallbackFormat="jpeg"
+        width={72}
+        height={72}
+        alt={content.name}
+        loading="eager"
+      />
+    </a>
+    <div class="nav-links">
+      <a href="#work">{content.ui.navWork}</a>
+      <a href="#writing">{content.ui.navWriting}</a>
+      <a href="#talks">{content.ui.navTalks}</a>
+    </div>
+    <div class="nav-lang">
+      {isEs ? <a href="/">EN</a> : <span class="nav-lang-current">EN</span>}
+      <span aria-hidden="true">|</span>
+      {isEs ? <span class="nav-lang-current">ES</span> : <a href="/es/">ES</a>}
+    </div>
+  </div>
+</nav>

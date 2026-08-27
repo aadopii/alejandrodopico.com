@@ -1,0 +1,41 @@
+---
+import type { SiteContent } from '../data/types';
+import { renderInline } from '../data/renderInline';
+import { FLAGS } from '../data/flags';
+
+interface Props {
+  content: SiteContent;
+}
+
+const { content } = Astro.props;
+const { work } = content;
+const hasContent = work.introMd.length > 0;
+---
+
+<section id="work">
+  <h2>{content.ui.sectionWork}</h2>
+  {hasContent ? (
+    <>
+      <p set:html={renderInline(work.introMd)} />
+      <ul class="work-bullets">
+        {work.bullets.map((b) => (
+          <li>
+            <span set:html={renderInline(b.md)} />
+            {b.subBullets && b.subBullets.length > 0 && (
+              <ul class="sub-bullets">
+                {b.subBullets
+                  .filter((sb) => !sb.flag || FLAGS[sb.flag as keyof typeof FLAGS])
+                  .map((sb) => (
+                    <li set:html={renderInline(sb.md)} />
+                  ))}
+              </ul>
+            )}
+          </li>
+        ))}
+      </ul>
+      <p set:html={renderInline(work.outroMd)} />
+    </>
+  ) : (
+    <p class="stub-notice">{content.ui.stubNotice}</p>
+  )}
+</section>

@@ -1,0 +1,62 @@
+# Alejandro Dopico
+
+> Co-Founder & CEO of Sail. Builds AI agents for onchain finance. Personal site: bio, work, writing, and talks.
+
+I like to build and sell solutions to complex problems. Technology and business are two natural places to do that, though I'm also interested in second-order derivatives in non-scientific areas like philosophy, history, economics, and politics.
+
+My main areas of interest over the past few years have been AI agents and onchain finance. First, because I think we're witnessing the birth of the agentic economy, and second, because I think that economy will run on crypto rails.
+
+## Pages
+
+- [Home (English, canonical)](https://alejandrodopico.com/): full site content — bio, work, writing, talks.
+- [Home (Spanish)](https://alejandrodopico.com/es/): full Spanish site content — bio, work, writing, talks. Writing and talk titles stay in English (published at English URLs).
+
+## Work
+
+I cofounded and ran [Sail](https://sail.money/) (previously Fungi) as CEO, a venture-backed startup that built and operated money agents at scale. At Sail, I personally built and open-sourced Sailor (an open source harness for non-custodial money agents) and Sail Protocol (an open source onchain primitive for separately managed accounts). The Stablecoin Yield Agent built on top of them autonomously reallocates USD and EUR stablecoin deposits across DeFi to maximize yield: +$1M AUM, $700M volume, 300 users. Before Sail, I cofounded Boveda, a decentralized storage provider on Filecoin. Before that, I worked in banking and asset management at Allfunds and Santander Bank.
+
+Full section: https://alejandrodopico.com/#work
+
+## Writing
+
+Eight essays and posts on money agents, DeFi, and crypto, 2024–2026. Full list with links: https://alejandrodopico.com/#writing
+
+## Talks
+
+Six talks and conversations on money agents and crypto/AI, 2025–2026, at Cambrian, Decasonic, the Hanseatic Blockchain Institute, CoinIX, and Seed Club. Full list with links: https://alejandrodopico.com/#talks
+
+## Contact
+
+- Email: aadopii@gmail.com
+- X: https://x.com/aadopico
+- GitHub: https://github.com/aadopii
+- LinkedIn: https://linkedin.com/in/alejandro-dopico
+
+---
+
+# Alejandro Dopico (Español)
+
+> Cofundador y CEO de Sail. Construye agentes de IA para finanzas onchain. Sitio personal: bio, trabajo, artículos y entrevistas.
+
+Nacido en Caracas. Hecho en Madrid.
+
+Me gusta construir y vender soluciones a problemas complejos. La tecnología y los negocios son dos lugares naturales para ello, aunque también me interesan las derivadas de segundo orden en áreas no científicas como la filosofía, la historia, la economía y la política.
+
+Mis principales áreas de interés en los últimos años han sido los agentes de IA y las finanzas onchain. Primero, porque creo que estamos viendo nacer la economía agéntica, y segundo, porque creo que esa economía funcionará sobre infraestructura cripto.
+
+## Páginas
+
+- [Inicio (Español)](https://alejandrodopico.com/es/): contenido completo del sitio en español — bio, trabajo, artículos, entrevistas. Los títulos de artículos y entrevistas permanecen en inglés (publicados en URLs en inglés).
+
+## Trabajo
+
+Cofundador y CEO de Sail (antes Fungi), startup respaldada por fondos de venture capital donde construimos y distribuimos money agents a escala. Entre los productos que construimos: Sailor (harness open source para money agents), Sail Protocol (protocolo onchain open source para cuentas de inversión personalizadas) y el Stablecoin Yield Agent, que mueve stablecoins de forma autónoma entre protocolos DeFi para maximizar el rendimiento: +$1M en AUM, $700M en volumen, 300 usuarios. Antes de Sail, cofundé Boveda, un proveedor de almacenamiento descentralizado en Filecoin. Antes de eso, trabajé en banca y gestión de activos en Allfunds y Banco Santander.
+
+Sección completa: https://alejandrodopico.com/es/#work
+
+## Contacto
+
+- Email: aadopii@gmail.com
+- X: https://x.com/aadopico
+- GitHub: https://github.com/aadopii
+- LinkedIn: https://linkedin.com/in/alejandro-dopico

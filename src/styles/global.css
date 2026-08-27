@@ -1,0 +1,302 @@
+/* Black text, white background, nothing else. The only color anywhere
+   on the site is the talk-thumbnail hover transition (grayscale -> color).
+   One typeface: system stack, no external font requests. */
+
+:root {
+  --fg: #000;
+  --bg: #fff;
+  --rule: #000;
+  --measure: 68ch;
+  --gap: 1.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem; /* keep anchored sections clear of the sticky nav */
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+h1, h2 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+p, ul {
+  margin: 0 0 1rem 0;
+}
+
+ul {
+  padding-left: 1.25rem;
+}
+
+/* ---------- Nav ---------- */
+
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg);
+  border-bottom: 1px solid var(--rule);
+}
+
+.nav-inner {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 0.6rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.nav-avatar {
+  display: block;
+  flex: none;
+  width: 34px;
+  height: 34px;
+  margin-right: 0.75rem;
+  border-radius: 50%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.nav-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Spanish nav labels ("entrevistas" especially) are long enough that at
+   very narrow widths the default spacing pushes EN|ES to a second row.
+   Tighten spacing only below this breakpoint -- desktop, and English at
+   375px (which already fits with room to spare), keep the wider,
+   deliberately-added avatar gap untouched. */
+@media (max-width: 420px) {
+  .nav-inner {
+    gap: 0.5rem;
+  }
+
+  .nav-avatar {
+    margin-right: 0.5rem;
+  }
+
+  .nav-links {
+    gap: 0.55rem;
+  }
+}
+
+.nav-lang {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  margin-left: auto;
+}
+
+.nav-lang-current {
+  font-weight: 700;
+}
+
+/* ---------- Page shell ---------- */
+
+main {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+}
+
+header.page-header {
+  /* No max-width/margin/padding here: this element already lives inside
+     <main>, which owns the single source of truth for the content
+     column's width and left/right padding. Adding a second copy of
+     that box here was the bug -- it stacked a second left-padding on
+     top of main's, pushing h1/contact-row/bio 20px further right than
+     the avatar and every section, which read from main directly. */
+  padding-top: 2rem;
+  scroll-margin-top: 4.5rem;
+}
+
+header.page-header h1 {
+  font-size: 1.6rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.contact-row {
+  font-size: 0.95rem;
+  word-break: break-word;
+}
+
+.contact-row .sep {
+  margin: 0 0.5em;
+}
+
+section {
+  margin-top: var(--gap);
+  padding-top: 2rem;
+  border-top: 1px solid var(--rule);
+  scroll-margin-top: 4.5rem;
+}
+
+section h2 {
+  font-size: 1.2rem;
+  margin: 0 0 1rem 0;
+}
+
+.stub-notice {
+  font-style: italic;
+  opacity: 0.7;
+}
+
+/* ---------- Work ---------- */
+
+.work-bullets > li {
+  margin-bottom: 0.75rem;
+}
+
+.sub-bullets {
+  margin-top: 0.4rem;
+}
+
+.sub-bullets li {
+  margin-bottom: 0.25rem;
+}
+
+/* ---------- Writing ---------- */
+
+.writing-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.writing-list li {
+  margin-bottom: 0.6rem;
+}
+
+.writing-list .sep {
+  margin: 0 0.5em;
+}
+
+.writing-list .year {
+  opacity: 0.7;
+}
+
+/* ---------- Talks ---------- */
+
+.talks-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .talks-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.talk-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  border: 1px solid var(--rule);
+}
+
+.talk-media {
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #000;
+}
+
+.talk-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(100%);
+  transition: filter 0.2s ease;
+}
+
+.talk-card:hover .talk-media img {
+  filter: grayscale(0%);
+}
+
+.talk-media-x {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.talk-media-x-title {
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+.talk-meta {
+  padding: 0.75rem 0.9rem;
+}
+
+.talk-title {
+  display: block;
+  color: var(--fg);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.talk-venue-year {
+  display: block;
+  font-size: 0.85rem;
+  opacity: 0.7;
+  text-decoration: none;
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+  border-top: 1px solid var(--rule);
+  padding: 1.5rem 1.25rem 2.5rem;
+  max-width: var(--measure);
+  margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+  header.page-header h1 {
+    font-size: 1.9rem;
+  }
+}

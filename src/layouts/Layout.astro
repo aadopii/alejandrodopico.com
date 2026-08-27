@@ -1,0 +1,96 @@
+---
+import type { SiteContent } from '../data/types';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import avatarSrc from '../assets/avatar.jpg';
+import '../styles/global.css';
+
+interface Props {
+  content: SiteContent;
+  /** '/' for English, '/es/' for Spanish. */
+  path: string;
+}
+
+const { content, path } = Astro.props;
+const isEs = content.lang === 'es';
+const siteUrl = 'https://alejandrodopico.com';
+const canonical = `${siteUrl}${path}`;
+const altPath = isEs ? '/' : '/es/';
+const altHref = `${siteUrl}${altPath}`;
+
+const title = `${content.name} — ${content.tagline}`;
+// Per-locale meta description, sourced from content.metaDescription --
+// English's own text for /, the Spanish text from website-content-es.md
+// verbatim for /es/. Never a translation of the other locale's string.
+const description = content.metaDescription;
+
+const personLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Alejandro Dopico',
+  jobTitle: 'Co-Founder & CEO',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Sail',
+    url: 'https://sail.money/',
+  },
+  alumniOf: 'Universidad Complutense de Madrid',
+  url: siteUrl,
+  inLanguage: content.lang,
+  image: `${siteUrl}${avatarSrc.src}`,
+  birthPlace: {
+    '@type': 'Place',
+    name: 'Caracas, Venezuela',
+  },
+  homeLocation: {
+    '@type': 'Place',
+    name: 'Madrid, Spain',
+  },
+  sameAs: [
+    'https://linkedin.com/in/alejandro-dopico',
+    'https://github.com/aadopii',
+    'https://x.com/aadopico',
+  ],
+};
+---
+
+<!doctype html>
+<html lang={content.lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <link rel="alternate" hreflang="en" href={`${siteUrl}/`} />
+    <link rel="alternate" hreflang="es" href={`${siteUrl}/es/`} />
+    <link rel="alternate" hreflang="x-default" href={`${siteUrl}/`} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={`${siteUrl}/og-image.png`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${siteUrl}/og-image.png`} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(personLd)} />
+  </head>
+  <body>
+    <Nav content={content} path={path} altHref={altHref} />
+    <main>
+      <slot />
+    </main>
+    <Footer content={content} />
+  </body>
+</html>
