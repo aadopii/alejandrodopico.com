@@ -97,7 +97,8 @@ images, same grayscale/hover treatment as English.
 - Crypto & AI with Decasonic · 2026
 - Personal AI agents for digital money with the Hanseatic Blockchain
   Institute · 2026
-- Personal AI agents for digital money with CoinIX · 2026
+- On-Chain AI: Automating DeFi and Governance panel at Token2049
+  Singapore · 2025
 - Explaining our Stablecoin Yield Agent with Seed Club at the 11am
   show · 2025
 - Intersection of Crypto & AI with Seed Club at the 11am show · 2025
