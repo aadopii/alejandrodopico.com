@@ -1,5 +1,5 @@
 website-content.md — v2 — source content for alejandrodopico.com
-English canonical. Spanish is phase 2 (structure must support it; see i18n note). Content mirrors the live GitHub README (github.com/aadopii) — that is the source of truth for tone and facts. One deliberate divergence: "CoinIX" spelling (README currently has "CoinIx").
+English canonical. Spanish is phase 2 (structure must support it; see i18n note). Content mirrors the live GitHub README (github.com/aadopii) — that is the source of truth for tone and facts.
 Top nav (sticky, thin, black on white)
 Left: Alejandro Dopico (links to top) Center/right: work · writing · talks — same-page anchor links Far right: EN | ES toggle (manual link between / and /es/, no Accept-Language detection, English default)
 Sections get ids: #work, #writing, #talks — deep-linkable.
@@ -9,7 +9,7 @@ Bio (no heading — verbatim from GitHub About)
 I like to build and sell solutions to complex problems. Technology and business are two natural places to do that, though I'm also interested in second-order derivatives in non-scientific areas like philosophy, history, economics, and politics.
 My main areas of interest over the past few years have been AI agents and onchain finance. First, because I think we're witnessing the birth of the agentic economy, and second, because I think that economy will run on crypto rails.
 Work (#work) — GitHub narrative style, NOT CV style. No dates, no
-job-entry list. Verbatim from README except CoinIX spelling n/a here.
+job-entry list. Verbatim from README.
 I cofounded and ran [Sail](https://sail.money/) (previously Fungi) as CEO, a venture-backed startup that built and operated money agents at scale. At Sail, I personally built and open-sourced:
 
 * [Sailor](https://github.com/sail-money/Sailor) — open source harness for non-custodial money agents.
@@ -42,12 +42,12 @@ Thumbnail rules:
 * X broadcasts/Spaces (no public thumbnail): plain black card, talk title set in white type — same dimensions as thumbnail cards so the grid stays uniform.
 * Card = image/title block + venue + year. Whole card is the link.
 
-Entries (README order; CoinIX spelling; Seed Club timestamp dropped):
+Entries (README order; Seed Club timestamp dropped):
 
 * [Money agents with Cambrian](https://x.com/i/broadcasts/1DxleVBWZBMKL) · 2026 — X card
 * [Crypto & AI with Decasonic](https://x.com/i/spaces/1PJqrNgWraNxb/peek) · 2026 — X card
 * [Personal AI agents for digital money with the Hanseatic Blockchain Institute](https://www.youtube.com/watch?v=62D2MHDYUBs) · 2026 — YouTube thumb
-* [Personal AI agents for digital money with CoinIX](https://www.youtube.com/watch?v=WeSiThcpOWQ) · 2026 — YouTube thumb
+* [On-Chain AI: Automating DeFi and Governance panel at Token2049 Singapore](https://www.youtube.com/watch?v=Y6qN68xVEPw) · 2025 — YouTube thumb
 * [Explaining our Stablecoin Yield Agent with Seed Club at the 11am show](https://www.youtube.com/watch?v=EcTisvBrcWw) · 2025 — YouTube thumb
 * [Intersection of Crypto & AI with Seed Club at the 11am show](https://x.com/i/broadcasts/1dRKZYLVeZzxB) · 2025 — X card
 
